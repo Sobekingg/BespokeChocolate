@@ -1,67 +1,90 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bespoke Chocolates</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!-- Hero Banner -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Bespoke Chocolates</h1>
-            <p>Chocolates personalizados para momentos especiales</p>
-            <a href="#catalogo" class="cta-button">Descubre Nuestro Catálogo</a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Bespoke Chocolates</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#nosotros">Nuestra Historia</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+            </ul>
         </div>
-    </header>
-
-    <!-- Barra de Navegación -->
-    <nav class="navbar">
-        <a href="#inicio">Inicio</a>
-        <a href="#catalogo">Catálogo</a>
-        <a href="#contacto">Contacto</a>
-        <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-        <a href="https://wa.me/1234567890" target="_blank">WhatsApp</a>
     </nav>
 
-    <!-- Sección de Inicio -->
-    <section id="inicio" class="intro">
-        <h2>Bienvenidos a Bespoke Chocolates</h2>
-        <div class="galeria-inicio">
-            <img src="banner-image.jpeg" alt="Cliente 1">
-            <img src="familia.jpeg" alt="Familia con chocolate">
-            <img src="pareja.jpeg" alt="Pareja con chocolate">
+    <!-- Banner -->
+    <div class="banner">
+        <img src="banner-image.jpeg" alt="Banner Bespoke Chocolates" class="img-fluid">
+        <div class="banner-text">
+            <h1>Experiencia en Cada Bocado</h1>
+            <p>Chocolates personalizados para momentos especiales</p>
+        </div>
+    </div>
+
+    <!-- Productos -->
+    <section id="productos" class="container my-5">
+        <h2 class="text-center mb-4">Nuestros Productos</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="caja-8-chocolates.jpeg" class="card-img-top" alt="Caja 8 Chocolates">
+                    <div class="card-body">
+                        <h5 class="card-title">Caja de 8 Chocolates</h5>
+                        <p class="card-text">Exquisita selección de chocolates finos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="tableta-grande.jpeg" class="card-img-top" alt="Tableta Grande">
+                    <div class="card-body">
+                        <h5 class="card-title">Tableta Grande</h5>
+                        <p class="card-text">Chocolate premium en presentación grande.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Agrega más productos según sea necesario -->
         </div>
     </section>
 
-    <!-- Catálogo de Productos -->
-    <section id="catalogo" class="catalog">
-        <h2>Nuestros Productos</h2>
-        <div class="productos">
-            <!-- Ejemplo de Producto -->
-            <div class="producto">
-                <img src="caja 8 chocolates 2.jpeg" alt="Caja 8 Chocolates">
-                <h3>Caja de 8 Chocolates</h3>
-                <p>Exquisita selección de chocolates finos</p>
-                <a href="#" class="button">Ver más</a>
-            </div>
-            <!-- Repite para cada producto -->
+    <!-- Nuestra Historia -->
+    <section id="nosotros" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center">Nuestra Historia</h2>
+            <p class="text-center">Desde nuestros inicios, Bespoke Chocolates ha creado momentos especiales a través de sabores únicos y personalizables. Nos enorgullecemos de crear chocolates artesanales con la mejor calidad.</p>
         </div>
     </section>
 
-    <!-- Pie de Página -->
-    <footer>
-        <div class="footer-content">
-            <p>© 2024 Bespoke Chocolates - Todos los derechos reservados</p>
-            <div class="social-links">
-                <a href="https://www.instagram.com/" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
-                <a href="https://wa.me/1234567890" target="_blank"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
-            </div>
-        </div>
+    <!-- Contacto -->
+    <section id="contacto" class="container my-5">
+        <h2 class="text-center">Contáctanos</h2>
+        <p class="text-center">Para pedidos personalizados, contáctanos a través de Instagram o WhatsApp.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2023 Bespoke Chocolates. Todos los derechos reservados.</p>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram mx-2"></i></a>
+        <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp mx-2"></i></a>
     </footer>
 
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
