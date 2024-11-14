@@ -8,47 +8,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Estilos para la ventana emergente */
-        .modal {
-            display: none; 
-            position: fixed;
-            z-index: 1000; 
-            padding-top: 100px; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
-            background-color: rgba(0,0,0,0.5);
+        /* Estilo personalizado para mejorar el encabezado y el banner */
+        .navbar-brand {
+            font-family: 'Georgia', serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e0a800 !important;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
-        .modal-content {
-            background-color: #fff;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
+        .banner {
+            background-color: #333;
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+        }
+        .banner h1 {
+            font-size: 3.5rem;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            color: #e0a800;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+        .banner img {
             width: 80%;
             max-width: 500px;
             border-radius: 8px;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover, .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .quantity-control {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .quantity-control button {
-            font-size: 18px;
-            width: 40px;
-            height: 40px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -72,10 +60,9 @@
     </nav>
 
     <!-- Banner -->
-    <div class="banner" style="position: relative; height: 50vh; background-image: url('path_to_your_image/banner.jpg'); background-size: cover; background-position: center;">
-        <div class="banner-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center;">
-            <h1 style="color: #fff; font-size: 3rem; font-weight: bold; font-family: 'Serif', sans-serif; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);">#DiloConBespoke</h1>
-        </div>
+    <div class="banner">
+        <h1>#DiloConBespoke</h1>
+        <img src="familia.jpeg" alt="Cliente Bespoke">
     </div>
 
     <!-- Clientes -->
@@ -98,9 +85,8 @@
     <section id="productos" class="container my-5">
         <h2 class="text-center mb-4">Nuestros Productos</h2>
         <div class="row">
-            <!-- Lista completa de productos -->
             <div class="col-md-4 mb-4">
-                <div class="card product-card" onclick="openModal('Caja Salvador de Bahía')">
+                <div class="card product-card">
                     <img src="caja-8-chocolates.jpeg" class="card-img-top" alt="Caja 8 Chocolates">
                     <div class="card-body">
                         <h5 class="card-title">Caja Salvador de Bahía</h5>
@@ -110,17 +96,17 @@
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card product-card" onclick="openModal('Caja Brisa do Brasil')">
+                <div class="card product-card">
                     <img src="caja 8 chocolates 2.jpeg" class="card-img-top" alt="Caja de 8 Chocolates 2">
                     <div class="card-body">
-                        <h5 class="card-title">Caja Brisa do Brasil</h5>
+                        <h5 class="card-title">Caja Brisa do Brasil </h5>
                         <p class="card-text">Una variedad deliciosa de chocolates seleccionados y personalizables. Contiene 8 chocolates.</p>
-                         <p class="card-text">$22.00 dls</p>
+                        <p class="card-text">$22.00 dls</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card product-card" onclick="openModal('Tableta Salvador')">
+                <div class="card product-card">
                     <img src="tableta-grande.jpeg" class="card-img-top" alt="Tableta Grande">
                     <div class="card-body">
                         <h5 class="card-title">Tableta Salvador</h5>
@@ -130,7 +116,7 @@
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card product-card" onclick="openModal('Caja Blanca Arena')">
+                <div class="card product-card">
                     <img src="caja blanca.jpeg" class="card-img-top" alt="Caja Blanca">
                     <div class="card-body">
                         <h5 class="card-title">Caja Blanca Arena</h5>
@@ -140,7 +126,7 @@
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card product-card" onclick="openModal('Tableta Blanca Arena')">
+                <div class="card product-card">
                     <img src="tableta 2.jpeg" class="card-img-top" alt="Tableta 2">
                     <div class="card-body">
                         <h5 class="card-title">Tableta Blanca Arena</h5>
@@ -150,7 +136,7 @@
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card product-card" onclick="openModal('Tableta Rio Do Janeiro')">
+                <div class="card product-card">
                     <img src="tableta 3.jpeg" class="card-img-top" alt="Tableta 3">
                     <div class="card-body">
                         <h5 class="card-title">Tableta Rio Do Janeiro</h5>
@@ -160,7 +146,7 @@
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card product-card" onclick="openModal('Tableta Oaxaca')">
+                <div class="card product-card">
                     <img src="tableta 4.jpeg" class="card-img-top" alt="Tableta 4">
                     <div class="card-body">
                         <h5 class="card-title">Tableta Oaxaca</h5>
@@ -170,7 +156,7 @@
                 </div>
             </div>
             <div class="col-md-4 mb-4">
-                <div class="card product-card" onclick="openModal('Tableta México')">
+                <div class="card product-card">
                     <img src="tableta 5.jpeg" class="card-img-top" alt="Tableta 5">
                     <div class="card-body">
                         <h5 class="card-title">Tableta México</h5>
@@ -181,26 +167,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h4 id="modal-product-name"></h4>
-            <div class="quantity-control">
-                <label for="quantity">Cantidad:</label>
-                <button onclick="decreaseQuantity()">-</button>
-                <input type="text" id="quantity" value="1" readonly>
-                <button onclick="increaseQuantity()">+</button>
-            </div>
-            <div class="mt-3">
-                <label><input type="radio" name="message" id="generic" checked> Mensaje Genérico</label>
-                <label class="ml-2"><input type="radio" name="message" id="custom"> Mensaje Personalizado</label>
-                <input type="text" id="custom-message" placeholder="Escribe tu mensaje (máximo 20 palabras)" maxlength="20" disabled class="form-control mt-2">
-            </div>
-            <button class="btn btn-primary mt-3" onclick="closeModal()">Añadir al Carrito</button>
-        </div>
-    </div>
 
     <!-- Nuestra Historia -->
     <section id="nosotros" class="bg-light py-5">
@@ -227,30 +193,5 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        function openModal(productName) {
-            document.getElementById("modal-product-name").innerText = productName;
-            document.getElementById("myModal").style.display = "block";
-        }
-        function closeModal() {
-            document.getElementById("myModal").style.display = "none";
-        }
-        function increaseQuantity() {
-            let quantity = document.getElementById("quantity").value;
-            document.getElementById("quantity").value = parseInt(quantity) + 1;
-        }
-        function decreaseQuantity() {
-            let quantity = document.getElementById("quantity").value;
-            if (quantity > 1) {
-                document.getElementById("quantity").value = parseInt(quantity) - 1;
-            }
-        }
-        document.getElementById("custom").addEventListener("change", function() {
-            document.getElementById("custom-message").disabled = !this.checked;
-        });
-        document.getElementById("generic").addEventListener("change", function() {
-            document.getElementById("custom-message").disabled = this.checked;
-        });
-    </script>
 </body>
 </html>
