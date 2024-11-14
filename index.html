@@ -1,67 +1,159 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bespoke Chocolates</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Hero Banner -->
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Bespoke Chocolates</h1>
-            <p>Chocolates personalizados para momentos especiales</p>
-            <a href="#catalogo" class="cta-button">Descubre Nuestro Catálogo</a>
-        </div>
-    </header>
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
 
-    <!-- Barra de Navegación -->
-    <nav class="navbar">
-        <a href="#inicio">Inicio</a>
-        <a href="#catalogo">Catálogo</a>
-        <a href="#contacto">Contacto</a>
-        <a href="https://www.instagram.com/" target="_blank">Instagram</a>
-        <a href="https://wa.me/1234567890" target="_blank">WhatsApp</a>
-    </nav>
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
 
-    <!-- Sección de Inicio -->
-    <section id="inicio" class="intro">
-        <h2>Bienvenidos a Bespoke Chocolates</h2>
-        <div class="galeria-inicio">
-            <img src="banner-image.jpeg" alt="Cliente 1">
-            <img src="familia.jpeg" alt="Familia con chocolate">
-            <img src="pareja.jpeg" alt="Pareja con chocolate">
-        </div>
-    </section>
+/* Hero Banner */
+.hero {
+    background: url('banner-image.jpeg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 5rem 1rem;
+    position: relative;
+}
 
-    <!-- Catálogo de Productos -->
-    <section id="catalogo" class="catalog">
-        <h2>Nuestros Productos</h2>
-        <div class="productos">
-            <!-- Ejemplo de Producto -->
-            <div class="producto">
-                <img src="caja 8 chocolates 2.jpeg" alt="Caja 8 Chocolates">
-                <h3>Caja de 8 Chocolates</h3>
-                <p>Exquisita selección de chocolates finos</p>
-                <a href="#" class="button">Ver más</a>
-            </div>
-            <!-- Repite para cada producto -->
-        </div>
-    </section>
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+}
 
-    <!-- Pie de Página -->
-    <footer>
-        <div class="footer-content">
-            <p>© 2024 Bespoke Chocolates - Todos los derechos reservados</p>
-            <div class="social-links">
-                <a href="https://www.instagram.com/" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
-                <a href="https://wa.me/1234567890" target="_blank"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
-            </div>
-        </div>
-    </footer>
+.hero h1 {
+    font-size: 2.5rem;
+}
 
-</body>
-</html>
+.cta-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #d4af37;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #b89c2e;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 1rem;
+}
+
+.navbar a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #d4af37;
+}
+
+/* Sección de Inicio */
+.intro {
+    padding: 2rem;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.galeria-inicio {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.galeria-inicio img {
+    width: 30%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Catálogo de Productos */
+.catalog {
+    padding: 2rem;
+    text-align: center;
+    background-color: #e7d5c4;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.producto {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.producto img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+.producto:hover {
+    transform: translateY(-10px);
+}
+
+.button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #d4af37;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 0.5rem;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background-color: #b89c2e;
+}
+
+/* Footer */
+footer {
+    background-color: #4b2c20;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.social-links a {
+    margin: 0 0.5rem;
+}
+
+.social-links img {
+    width: 24px;
+    height: 24px;
+}
