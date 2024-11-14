@@ -1,87 +1,78 @@
-/* Estilos Generales */
-body {
-    font-family: Arial, sans-serif;
+/* Reset */
+* {
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
 }
 
 /* Encabezado */
 header {
-    background-color: #4b2c20;
-    color: white;
-    padding: 1em;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header .logo h1 {
+    font-size: 1.5rem;
+    color: #000;
+}
+
+header .logo p {
+    font-size: 0.8rem;
+    color: #666;
 }
 
 header nav a {
-    color: white;
-    margin: 0 1em;
+    margin: 0 1rem;
     text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+header nav a.carrito {
+    font-size: 0.9rem;
+    color: #ff4500;
 }
 
 /* Banner Principal */
 #banner {
+    margin-top: 80px; /* Ajuste para la barra de navegación fija */
+    position: relative;
     text-align: center;
-    padding: 3em;
-    background-color: #e7d5c4;
-}
-
-.cta {
-    background-color: #4b2c20;
     color: white;
-    padding: 0.5em 1em;
-    text-decoration: none;
-    border-radius: 5px;
 }
 
-/* Catálogo de Productos */
-#catalogo {
-    padding: 2em;
-    text-align: center;
-}
-
-.producto {
-    display: inline-block;
-    margin: 1em;
-    width: 200px;
-    padding: 1em;
-    background-color: white;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-}
-
-.producto img {
+.banner-img {
     width: 100%;
-    height: auto;
+    height: 500px;
+    object-fit: cover;
+    opacity: 0.9;
 }
 
-.producto .compra {
-    background-color: #4b2c20;
-    color: white;
-    padding: 0.5em;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 0.5em;
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem;
     border-radius: 5px;
 }
 
-/* Sección Sobre Nosotros */
-#nosotros {
-    padding: 2em;
-    background-color: #e7d5c4;
-    text-align: center;
+.banner-text h2 {
+    font-size: 2rem;
 }
 
-/* Pie de Página */
-footer {
-    background-color: #4b2c20;
-    color: white;
-    padding: 1em;
-    text-align: center;
-}
-
-footer .redes-sociales a {
-    color: white;
-    margin: 0 1em;
-    text-decoration: none;
-}
