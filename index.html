@@ -6,7 +6,6 @@
     <title>Bespoke Chocolates</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
     <style>
         /* Estilo personalizado para mejorar el encabezado y el banner */
         .navbar-brand {
@@ -37,6 +36,10 @@
             border-radius: 8px;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
             margin-top: 20px;
+        }
+        /* Estilos para la ventana emergente */
+        .modal-dialog {
+            max-width: 400px;
         }
     </style>
 </head>
@@ -85,6 +88,7 @@
     <section id="productos" class="container my-5">
         <h2 class="text-center mb-4">Nuestros Productos</h2>
         <div class="row">
+            <!-- Producto 1 -->
             <div class="col-md-4 mb-4">
                 <div class="card product-card">
                     <img src="caja-8-chocolates.jpeg" class="card-img-top" alt="Caja 8 Chocolates">
@@ -92,19 +96,23 @@
                         <h5 class="card-title">Caja Salvador de Bahía</h5>
                         <p class="card-text">Exquisita selección de chocolates finos personalizables. Contiene 8 Chocolates.</p>
                         <p class="card-text">$22.00 dls</p>
+                        <button class="btn btn-primary" onclick="openModal('Caja Salvador de Bahía')">Seleccionar</button>
                     </div>
                 </div>
             </div>
+            <!-- Producto 2 -->
             <div class="col-md-4 mb-4">
                 <div class="card product-card">
                     <img src="caja 8 chocolates 2.jpeg" class="card-img-top" alt="Caja de 8 Chocolates 2">
                     <div class="card-body">
-                        <h5 class="card-title">Caja Brisa do Brasil </h5>
+                        <h5 class="card-title">Caja Brisa do Brasil</h5>
                         <p class="card-text">Una variedad deliciosa de chocolates seleccionados y personalizables. Contiene 8 chocolates.</p>
                         <p class="card-text">$22.00 dls</p>
+                        <button class="btn btn-primary" onclick="openModal('Caja Brisa do Brasil')">Seleccionar</button>
                     </div>
                 </div>
             </div>
+            <!-- Producto 3 -->
             <div class="col-md-4 mb-4">
                 <div class="card product-card">
                     <img src="tableta-grande.jpeg" class="card-img-top" alt="Tableta Grande">
@@ -112,9 +120,11 @@
                         <h5 class="card-title">Tableta Salvador</h5>
                         <p class="card-text">Chocolate premium en presentación grande personalizable.</p>
                         <p class="card-text">$3.00 dls</p>
+                        <button class="btn btn-primary" onclick="openModal('Tableta Salvador')">Seleccionar</button>
                     </div>
                 </div>
             </div>
+            <!-- Producto 4 -->
             <div class="col-md-4 mb-4">
                 <div class="card product-card">
                     <img src="caja blanca.jpeg" class="card-img-top" alt="Caja Blanca">
@@ -122,9 +132,11 @@
                         <h5 class="card-title">Caja Blanca Arena</h5>
                         <p class="card-text">Ideal para regalos especiales. Contiene 8 chocolates.</p>
                         <p class="card-text">$22.00 dls</p>
+                        <button class="btn btn-primary" onclick="openModal('Caja Blanca Arena')">Seleccionar</button>
                     </div>
                 </div>
             </div>
+            <!-- Producto 5 -->
             <div class="col-md-4 mb-4">
                 <div class="card product-card">
                     <img src="tableta 2.jpeg" class="card-img-top" alt="Tableta 2">
@@ -132,9 +144,11 @@
                         <h5 class="card-title">Tableta Blanca Arena</h5>
                         <p class="card-text">Chocolate con mensaje especial para ocasiones únicas.</p>
                         <p class="card-text">$3.00 dls</p>
+                        <button class="btn btn-primary" onclick="openModal('Tableta Blanca Arena')">Seleccionar</button>
                     </div>
                 </div>
             </div>
+            <!-- Producto 6 -->
             <div class="col-md-4 mb-4">
                 <div class="card product-card">
                     <img src="tableta 3.jpeg" class="card-img-top" alt="Tableta 3">
@@ -142,9 +156,11 @@
                         <h5 class="card-title">Tableta Rio Do Janeiro</h5>
                         <p class="card-text">Sabor y diseño único para ti.</p>
                         <p class="card-text">$3.00 dls</p>
+                        <button class="btn btn-primary" onclick="openModal('Tableta Rio Do Janeiro')">Seleccionar</button>
                     </div>
                 </div>
             </div>
+            <!-- Producto 7 -->
             <div class="col-md-4 mb-4">
                 <div class="card product-card">
                     <img src="tableta 4.jpeg" class="card-img-top" alt="Tableta 4">
@@ -152,9 +168,11 @@
                         <h5 class="card-title">Tableta Oaxaca</h5>
                         <p class="card-text">Chocolate diseñado para momentos especiales.</p>
                         <p class="card-text">$3.00 dls</p>
+                        <button class="btn btn-primary" onclick="openModal('Tableta Oaxaca')">Seleccionar</button>
                     </div>
                 </div>
             </div>
+            <!-- Producto 8 -->
             <div class="col-md-4 mb-4">
                 <div class="card product-card">
                     <img src="tableta 5.jpeg" class="card-img-top" alt="Tableta 5">
@@ -162,11 +180,48 @@
                         <h5 class="card-title">Tableta México</h5>
                         <p class="card-text">Perfecto para regalar y compartir.</p>
                         <p class="card-text">$3.00 dls</p>
+                        <button class="btn btn-primary" onclick="openModal('Tableta México')">Seleccionar</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Modal para selección de cantidad y mensaje -->
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Personalizar Producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h6 id="productName"></h6>
+                    <label for="quantity">Cantidad:</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(-1)">-</button>
+                        </div>
+                        <input type="text" class="form-control text-center" id="quantity" value="1" readonly>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(1)">+</button>
+                        </div>
+                    </div>
+                    <label for="messageType">Mensaje:</label>
+                    <select class="form-control" id="messageType" onchange="toggleCustomMessage()">
+                        <option value="generic">Mensaje Genérico</option>
+                        <option value="custom">Mensaje Personalizado</option>
+                    </select>
+                    <textarea class="form-control mt-2" id="customMessage" maxlength="20" placeholder="Escribe tu mensaje aquí (máximo 20 palabras)" style="display: none;"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Nuestra Historia -->
     <section id="nosotros" class="bg-light py-5">
@@ -193,5 +248,24 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function openModal(productName) {
+            $('#productName').text(productName);
+            $('#productModal').modal('show');
+        }
+        function updateQuantity(change) {
+            var currentQuantity = parseInt($('#quantity').val());
+            currentQuantity += change;
+            if (currentQuantity < 1) currentQuantity = 1;
+            $('#quantity').val(currentQuantity);
+        }
+        function toggleCustomMessage() {
+            if ($('#messageType').val() === 'custom') {
+                $('#customMessage').show();
+            } else {
+                $('#customMessage').hide();
+            }
+        }
+    </script>
 </body>
 </html>
