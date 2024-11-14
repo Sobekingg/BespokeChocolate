@@ -1,25 +1,53 @@
 /* Banner */
 .banner {
-    background-color: #4a2c2a;
-    height: 200px;
+    background: linear-gradient(135deg, #4a2c2a, #d4af37);
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
 }
 
 .banner h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: bold;
-    font-family: 'Playfair Display', serif; /* Fuente elegante */
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    font-family: 'Playfair Display', serif;
+    color: #f8f3e8;
     letter-spacing: 3px;
-    background: linear-gradient(45deg, #d4af37, #a67c00); /* Degradado dorado */
+    z-index: 1;
+    background: linear-gradient(to right, #f8e9d2, #d4af37);
     -webkit-background-clip: text;
     color: transparent;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
     margin: 0;
+    padding: 10px 20px;
+    border-radius: 10px;
 }
 
-/* Enlace de Google Fonts en el <head> de index.html para la fuente Playfair Display */
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+/* Productos */
+.product-card {
+    transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer i {
+    font-size: 1.5rem;
+}
