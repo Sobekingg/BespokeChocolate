@@ -1,0 +1,87 @@
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/* Encabezado */
+header {
+    background-color: #4b2c20;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+header nav a {
+    color: white;
+    margin: 0 1em;
+    text-decoration: none;
+}
+
+/* Banner Principal */
+#banner {
+    text-align: center;
+    padding: 3em;
+    background-color: #e7d5c4;
+}
+
+.cta {
+    background-color: #4b2c20;
+    color: white;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Catálogo de Productos */
+#catalogo {
+    padding: 2em;
+    text-align: center;
+}
+
+.producto {
+    display: inline-block;
+    margin: 1em;
+    width: 200px;
+    padding: 1em;
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+}
+
+.producto .compra {
+    background-color: #4b2c20;
+    color: white;
+    padding: 0.5em;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 0.5em;
+    border-radius: 5px;
+}
+
+/* Sección Sobre Nosotros */
+#nosotros {
+    padding: 2em;
+    background-color: #e7d5c4;
+    text-align: center;
+}
+
+/* Pie de Página */
+footer {
+    background-color: #4b2c20;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+footer .redes-sociales a {
+    color: white;
+    margin: 0 1em;
+    text-decoration: none;
+}
