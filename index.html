@@ -108,7 +108,18 @@
                     </div>
                 </div>
             </div>
-            <!-- Más productos aquí... -->
+            <!-- Repite esta estructura para cada producto -->
+            <div class="col-md-4 mb-4">
+                <div class="card product-card" onclick="openModal('Caja Brisa do Brasil')">
+                    <img src="caja 8 chocolates 2.jpeg" class="card-img-top" alt="Caja de 8 Chocolates 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Caja Brisa do Brasil</h5>
+                        <p class="card-text">Una variedad deliciosa de chocolates seleccionados y personalizables. Contiene 8 chocolates.</p>
+                        <p class="card-text">$22.00 dls</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Agrega el resto de los productos de manera similar -->
         </div>
     </section>
 
@@ -132,47 +143,19 @@
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script>
-        // Funciones para abrir y cerrar el modal
-        function openModal(productName) {
-            document.getElementById("modal-product-name").innerText = productName;
-            document.getElementById("myModal").style.display = "block";
-        }
+    <!-- Nuestra Historia -->
+    <section id="nosotros" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center">Nuestra Historia</h2>
+            <p class="text-center">Desde nuestros inicios, Bespoke Chocolates ha creado momentos especiales a través de sabores únicos y personalizables. Nos enorgullecemos de crear chocolates artesanales con la mejor calidad.</p>
+        </div>
+    </section>
 
-        function closeModal() {
-            document.getElementById("myModal").style.display = "none";
-        }
-
-        // Control de cantidad
-        function increaseQuantity() {
-            let quantity = parseInt(document.getElementById("quantity").value);
-            document.getElementById("quantity").value = quantity + 1;
-        }
-
-        function decreaseQuantity() {
-            let quantity = parseInt(document.getElementById("quantity").value);
-            if (quantity > 1) {
-                document.getElementById("quantity").value = quantity - 1;
-            }
-        }
-
-        // Habilitar o deshabilitar campo de mensaje personalizado
-        document.getElementById("custom").addEventListener("change", function() {
-            document.getElementById("custom-message").disabled = false;
-        });
-        document.getElementById("generic").addEventListener("change", function() {
-            document.getElementById("custom-message").disabled = true;
-            document.getElementById("custom-message").value = "";
-        });
-
-        // Cerrar modal cuando se hace clic fuera de la ventana
-        window.onclick = function(event) {
-            if (event.target == document.getElementById("myModal")) {
-                closeModal();
-            }
-        }
-    </script>
+    <!-- Contacto -->
+    <section id="contacto" class="container my-5">
+        <h2 class="text-center">Contáctanos</h2>
+        <p class="text-center">Para pedidos personalizados, contáctanos a través de Instagram o WhatsApp.</p>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
@@ -185,5 +168,30 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function openModal(productName) {
+            document.getElementById("modal-product-name").innerText = productName;
+            document.getElementById("myModal").style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+        function increaseQuantity() {
+            let quantity = document.getElementById("quantity").value;
+            document.getElementById("quantity").value = parseInt(quantity) + 1;
+        }
+        function decreaseQuantity() {
+            let quantity = document.getElementById("quantity").value;
+            if (quantity > 1) {
+                document.getElementById("quantity").value = parseInt(quantity) - 1;
+            }
+        }
+        document.getElementById("custom").addEventListener("change", function() {
+            document.getElementById("custom-message").disabled = !this.checked;
+        });
+        document.getElementById("generic").addEventListener("change", function() {
+            document.getElementById("custom-message").disabled = this.checked;
+        });
+    </script>
 </body>
 </html>
