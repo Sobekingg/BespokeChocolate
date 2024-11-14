@@ -15,7 +15,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #ffffff;
+    background-color: #4b2c20;
+    color: white;
     position: fixed;
     width: 100%;
     top: 0;
@@ -25,25 +26,20 @@ header {
 
 header .logo h1 {
     font-size: 1.5rem;
-    color: #000;
+    color: #fff;
 }
 
 header .logo p {
     font-size: 0.8rem;
-    color: #666;
+    color: #ddd;
 }
 
 header nav a {
     margin: 0 1rem;
     text-decoration: none;
-    color: #333;
+    color: #fff;
     font-size: 1rem;
     font-weight: bold;
-}
-
-header nav a.carrito {
-    font-size: 0.9rem;
-    color: #ff4500;
 }
 
 /* Banner Principal */
@@ -74,4 +70,60 @@ header nav a.carrito {
 
 .banner-text h2 {
     font-size: 2rem;
+}
+
+/* Catálogo de Productos */
+#productos {
+    padding: 2em;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.producto {
+    display: inline-block;
+    margin: 1em;
+    width: 200px;
+    padding: 1em;
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+}
+
+.producto h3 {
+    color: #4b2c20;
+}
+
+.producto .compra {
+    background-color: #4b2c20;
+    color: white;
+    padding: 0.5em;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 0.5em;
+    border-radius: 5px;
+}
+
+/* Sección "Sobre Nosotros" */
+#nosotros {
+    padding: 2em;
+    text-align: center;
+    background-color: #e7d5c4;
+}
+
+/* Pie de Página */
+footer {
+    background-color: #4b2c20;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+footer .redes-sociales a {
+    color: white;
+    margin: 0 1em;
+    text-decoration: none;
 }
