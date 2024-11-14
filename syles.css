@@ -8,34 +8,18 @@
     color: white;
     text-align: center;
 }
+
 .banner h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     font-weight: bold;
+    font-family: 'Playfair Display', serif; /* Fuente elegante */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+    letter-spacing: 3px;
+    background: linear-gradient(45deg, #d4af37, #a67c00); /* Degradado dorado */
+    -webkit-background-clip: text;
+    color: transparent;
     margin: 0;
 }
 
-/* Productos */
-.product-card {
-    transition: transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Footer */
-footer i {
-    font-size: 1.5rem;
-}
-
-/* Imagenes de Clientes */
-#clientes img {
-    border: 2px solid #4a2c2a;
-    padding: 5px;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-#clientes img:hover {
-    transform: scale(1.05);
-}
+/* Enlace de Google Fonts en el <head> de index.html para la fuente Playfair Display */
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
