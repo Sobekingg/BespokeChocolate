@@ -6,26 +6,49 @@
     <title>Bespoke Chocolates</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Estilos del banner */
-        .banner {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('banner-image.jpeg') center/cover no-repeat;
-            height: 60vh;
+        /* Estilos para la ventana emergente */
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1000; 
+            padding-top: 100px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover, .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .quantity-control {
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-align: center;
+            gap: 10px;
         }
-
-        .banner-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            color: #f5e6cc;
-            font-weight: bold;
-            letter-spacing: 2px;
-            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
-            margin: 0;
+        .quantity-control button {
+            font-size: 18px;
+            width: 40px;
+            height: 40px;
         }
     </style>
 </head>
@@ -76,7 +99,7 @@
         <h2 class="text-center mb-4">Nuestros Productos</h2>
         <div class="row">
             <div class="col-md-4 mb-4">
-                <div class="card product-card">
+                <div class="card product-card" onclick="openModal('Caja Salvador de Bahía')">
                     <img src="caja-8-chocolates.jpeg" class="card-img-top" alt="Caja 8 Chocolates">
                     <div class="card-body">
                         <h5 class="card-title">Caja Salvador de Bahía</h5>
@@ -85,98 +108,77 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card product-card">
-                    <img src="caja 8 chocolates 2.jpeg" class="card-img-top" alt="Caja de 8 Chocolates 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Caja Brisa do Brasil </h5>
-                        <p class="card-text">Una variedad deliciosa de chocolates seleccionados y personalizables. Contiene 8 chocolates.</p>
-                         <p class="card-text">$22.00 dls</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card product-card">
-                    <img src="tableta-grande.jpeg" class="card-img-top" alt="Tableta Grande">
-                    <div class="card-body">
-                        <h5 class="card-title">Tableta Salvador</h5>
-                        <p class="card-text">Chocolate premium en presentación grande personalizable.</p>
-                        <p class="card-text">$3.00 dls</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card product-card">
-                    <img src="caja blanca.jpeg" class="card-img-top" alt="Caja Blanca">
-                    <div class="card-body">
-                        <h5 class="card-title">Caja Blanca Arena</h5>
-                        <p class="card-text">Ideal para regalos especiales. Contiene 8 chocolates.</p>
-                        <p class="card-text">$22.00 dls</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card product-card">
-                    <img src="tableta 2.jpeg" class="card-img-top" alt="Tableta 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Tableta Blanca Arena</h5>
-                        <p class="card-text">Chocolate con mensaje especial para ocasiones únicas.</p>
-                        <p class="card-text">$3.00 dls</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card product-card">
-                    <img src="tableta 3.jpeg" class="card-img-top" alt="Tableta 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Tableta Rio Do Janeiro</h5>
-                        <p class="card-text">Sabor y diseño único para ti.</p>
-                        <p class="card-text">$3.00 dls</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card product-card">
-                    <img src="tableta 4.jpeg" class="card-img-top" alt="Tableta 4">
-                    <div class="card-body">
-                        <h5 class="card-title">Tableta Oaxaca </h5>
-                        <p class="card-text">Chocolate diseñado para momentos especiales.</p>
-                        <p class="card-text">$3.00 dls</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card product-card">
-                    <img src="tableta 5.jpeg" class="card-img-top" alt="Tableta 5">
-                    <div class="card-body">
-                        <h5 class="card-title">Tableta México</h5>
-                        <p class="card-text">Perfecto para regalar y compartir.</p>
-                        <p class="card-text">$3.00 dls</p>
-                    </div>
-                </div>
-            </div>
+            <!-- Más productos aquí... -->
         </div>
     </section>
 
-    <!-- Nuestra Historia -->
-    <section id="nosotros" class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center">Nuestra Historia</h2>
-            <p class="text-center">Desde nuestros inicios, Bespoke Chocolates ha creado momentos especiales a través de sabores únicos y personalizables. Nos enorgullecemos de crear chocolates artesanales con la mejor calidad.</p>
+    <!-- Modal para personalización -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modal-product-name"></h2>
+            <div class="quantity-control">
+                <button onclick="decreaseQuantity()">-</button>
+                <input type="text" id="quantity" value="1" readonly>
+                <button onclick="increaseQuantity()">+</button>
+            </div>
+            <p>Elige un mensaje:</p>
+            <input type="radio" id="generic" name="message" value="genérico" checked> 
+            <label for="generic">Mensaje genérico</label><br>
+            <input type="radio" id="custom" name="message" value="personalizado"> 
+            <label for="custom">Mensaje personalizado</label>
+            <input type="text" id="custom-message" placeholder="Escribe tu mensaje (máximo 20 palabras)" disabled maxlength="100" style="display: block; margin-top: 10px; width: 100%;">
+            <button class="btn btn-primary mt-3">Añadir al carrito</button>
         </div>
-    </section>
+    </div>
 
-    <!-- Contacto -->
-    <section id="contacto" class="container my-5">
-        <h2 class="text-center">Contáctanos</h2>
-        <p class="text-center">Para pedidos personalizados, contáctanos a través de Instagram o WhatsApp.</p>
-    </section>
+    <!-- Scripts -->
+    <script>
+        // Funciones para abrir y cerrar el modal
+        function openModal(productName) {
+            document.getElementById("modal-product-name").innerText = productName;
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Control de cantidad
+        function increaseQuantity() {
+            let quantity = parseInt(document.getElementById("quantity").value);
+            document.getElementById("quantity").value = quantity + 1;
+        }
+
+        function decreaseQuantity() {
+            let quantity = parseInt(document.getElementById("quantity").value);
+            if (quantity > 1) {
+                document.getElementById("quantity").value = quantity - 1;
+            }
+        }
+
+        // Habilitar o deshabilitar campo de mensaje personalizado
+        document.getElementById("custom").addEventListener("change", function() {
+            document.getElementById("custom-message").disabled = false;
+        });
+        document.getElementById("generic").addEventListener("change", function() {
+            document.getElementById("custom-message").disabled = true;
+            document.getElementById("custom-message").value = "";
+        });
+
+        // Cerrar modal cuando se hace clic fuera de la ventana
+        window.onclick = function(event) {
+            if (event.target == document.getElementById("myModal")) {
+                closeModal();
+            }
+        }
+    </script>
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2023 Bespoke Chocolates. Todos los derechos reservados.</p>
         <a href="https://www.instagram.com/bespoke.chocolate/" target="_blank"><i class="fab fa-instagram mx-2"></i></a>
-        <a href="https://wa.me/+525530098469" target="_blank"><i class="fab fa-whatsapp mx-2"></i></a>
+        <a href="https://wa.me/5530098469" target="_blank"><i class="fab fa-whatsapp mx-2"></i></a>
     </footer>
 
     <!-- JavaScript -->
