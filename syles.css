@@ -1,53 +1,102 @@
+/* Reset de márgenes y relleno */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    font-weight: bold;
+    font-size: 18px;
+}
+
 /* Banner */
 .banner {
-    background: linear-gradient(135deg, #4a2c2a, #d4af37);
-    height: 300px;
+    background-image: url('banner-image.jpeg'); /* Cambia esto por la URL de tu imagen de fondo si tienes una */
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    text-align: center;
     position: relative;
-    overflow: hidden;
+    color: #fff;
 }
 
-.banner:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);
-}
-
-.banner h1 {
+.banner-text h1 {
     font-size: 4rem;
     font-weight: bold;
-    font-family: 'Playfair Display', serif;
-    color: #f8f3e8;
-    letter-spacing: 3px;
-    z-index: 1;
-    background: linear-gradient(to right, #f8e9d2, #d4af37);
-    -webkit-background-clip: text;
-    color: transparent;
-    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.7);
-    margin: 0;
-    padding: 10px 20px;
-    border-radius: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    font-family: 'Georgia', serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px 40px;
+    border-radius: 8px;
+}
+
+/* Estilos de secciones */
+section {
+    padding: 60px 0;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 30px;
 }
 
 /* Productos */
 .product-card {
+    border: none;
     transition: transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.product-card .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-card .card-text {
+    color: #666;
 }
 
 /* Footer */
-footer i {
-    font-size: 1.5rem;
+footer {
+    background-color: #222;
+    color: #ddd;
+    padding: 20px 0;
+}
+
+footer a {
+    color: #ddd;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .banner-text h1 {
+        font-size: 2.5rem;
+        padding: 10px 20px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
 }
