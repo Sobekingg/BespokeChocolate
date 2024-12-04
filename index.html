@@ -76,7 +76,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <div class="dropdown">
+    <div class="dropdown ml-auto">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Idioma
     </button>
@@ -303,95 +303,72 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        function openModal(productName) {
-            $('#productName').text(productName);
-            $('#productModal').modal('show');
+   
+<script>
+    const translations = {
+        es: {
+            navbar: {
+                products: "Productos",
+                clients: "Clientes",
+                history: "Nuestra Historia",
+                contact: "Contacto"
+            },
+            banner: "#DiloConBespoke",
+            clientsSection: "Nuestros Clientes",
+            productsSection: "Nuestros Productos",
+            ourHistory: "Nuestra Historia",
+            contactUs: "Contáctanos",
+            contactDescription: "Para pedidos personalizados, contáctanos a través de Instagram o WhatsApp."
+        },
+        en: {
+            navbar: {
+                products: "Products",
+                clients: "Clients",
+                history: "Our Story",
+                contact: "Contact"
+            },
+            banner: "#SayItWithBespoke",
+            clientsSection: "Our Clients",
+            productsSection: "Our Products",
+            ourHistory: "Our Story",
+            contactUs: "Contact Us",
+            contactDescription: "For custom orders, contact us via Instagram or WhatsApp."
+        },
+        pt: {
+            navbar: {
+                products: "Produtos",
+                clients: "Clientes",
+                history: "Nossa História",
+                contact: "Contato"
+            },
+            banner: "#DigaComBespoke",
+            clientsSection: "Nossos Clientes",
+            productsSection: "Nossos Produtos",
+            ourHistory: "Nossa História",
+            contactUs: "Contate-Nos",
+            contactDescription: "Para pedidos personalizados, entre em contato pelo Instagram ou WhatsApp."
         }
-        function updateQuantity(change) {
-            var currentQuantity = parseInt($('#quantity').val());
-            currentQuantity += change;
-            if (currentQuantity < 1) currentQuantity = 1;
-            $('#quantity').val(currentQuantity);
-        }
-        function toggleCustomMessage() {
-            if ($('#messageType').val() === 'custom') {
-                $('#customMessage').show();
-            } else {
-                $('#customMessage').hide();
-            }
-        }
-        let cart = [];
+    };
 
-function addToCart(productName, quantity) {
-    cart.push({ productName, quantity });
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`${productName} añadido al carrito.`);
-}
-const translations = {
-    es: {
-        navbar: {
-            products: "Productos",
-            clients: "Clientes",
-            history: "Nuestra Historia",
-            contact: "Contacto"
-        },
-        banner: "#DiloConBespoke",
-        clientsSection: "Nuestros Clientes",
-        productsSection: "Nuestros Productos",
-        ourHistory: "Nuestra Historia",
-        contactUs: "Contáctanos",
-        contactDescription: "Para pedidos personalizados, contáctanos a través de Instagram o WhatsApp."
-    },
-    en: {
-        navbar: {
-            products: "Products",
-            clients: "Clients",
-            history: "Our Story",
-            contact: "Contact"
-        },
-        banner: "#SayItWithBespoke",
-        clientsSection: "Our Clients",
-        productsSection: "Our Products",
-        ourHistory: "Our Story",
-        contactUs: "Contact Us",
-        contactDescription: "For custom orders, contact us via Instagram or WhatsApp."
-    },
-    pt: {
-        navbar: {
-            products: "Produtos",
-            clients: "Clientes",
-            history: "Nossa História",
-            contact: "Contato"
-        },
-        banner: "#DigaComBespoke",
-        clientsSection: "Nossos Clientes",
-        productsSection: "Nossos Produtos",
-        ourHistory: "Nossa História",
-        contactUs: "Contate-Nos",
-        contactDescription: "Para pedidos personalizados, entre em contato pelo Instagram ou WhatsApp."
+    function changeLanguage(lang) {
+        // Cambiar texto de la navbar
+        document.querySelector('a.nav-link[href="#productos"]').innerText = translations[lang].navbar.products;
+        document.querySelector('a.nav-link[href="#clientes"]').innerText = translations[lang].navbar.clients;
+        document.querySelector('a.nav-link[href="#nosotros"]').innerText = translations[lang].navbar.history;
+        document.querySelector('a.nav-link[href="#contacto"]').innerText = translations[lang].navbar.contact;
+
+        // Cambiar el texto del banner
+        document.querySelector(".banner h1").innerText = translations[lang].banner;
+
+        // Cambiar títulos de las secciones
+        document.querySelector("#clientes h2").innerText = translations[lang].clientsSection;
+        document.querySelector("#productos h2").innerText = translations[lang].productsSection;
+        document.querySelector("#nosotros h2").innerText = translations[lang].ourHistory;
+        document.querySelector("#contacto h2").innerText = translations[lang].contactUs;
+
+        // Cambiar textos de descripción
+        document.querySelector("#contacto p").innerText = translations[lang].contactDescription;
     }
-};
-
-function changeLanguage(lang) {
-    // Cambiar texto de la navbar
-    document.querySelector('a.nav-link[href="#productos"]').innerText = translations[lang].navbar.products;
-    document.querySelector('a.nav-link[href="#clientes"]').innerText = translations[lang].navbar.clients;
-    document.querySelector('a.nav-link[href="#nosotros"]').innerText = translations[lang].navbar.history;
-    document.querySelector('a.nav-link[href="#contacto"]').innerText = translations[lang].navbar.contact;
-
-    // Cambiar el texto del banner
-    document.querySelector(".banner h1").innerText = translations[lang].banner;
-
-    // Cambiar títulos de las secciones
-    document.querySelector("#clientes h2").innerText = translations[lang].clientsSection;
-    document.querySelector("#productos h2").innerText = translations[lang].productsSection;
-    document.querySelector("#nosotros h2").innerText = translations[lang].ourHistory;
-    document.querySelector("#contacto h2").innerText = translations[lang].contactUs;
-
-    // Cambiar textos de descripción
-    document.querySelector("#contacto p").innerText = translations[lang].contactDescription;
-}
-    </script>
+</script>
 </body>
 </html>
