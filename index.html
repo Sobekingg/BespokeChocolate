@@ -37,14 +37,14 @@
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
             margin-top: 20px;
         }
-        /* Estilos para la ventana emergente */
-        .modal-dialog {
-            max-width: 400px;
+        .product-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease-in-out;
         }
     </style>
 </head>
 <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Bespoke Chocolates</a>
@@ -57,17 +57,6 @@
                 <li class="nav-item"><a class="nav-link" href="#clientes">Clientes</a></li>
                 <li class="nav-item"><a class="nav-link" href="#nosotros">Nuestra Historia</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-                <!-- Menú desplegable de idiomas -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Idioma
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                        <a class="dropdown-item" href="#" onclick="changeLanguage('es')">Español</a>
-                        <a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a>
-                        <a class="dropdown-item" href="#" onclick="changeLanguage('pt')">Português</a>
-                    </div>
-                </li>
             </ul>
         </div>
     </nav>
@@ -78,257 +67,162 @@
         <img src="familia.jpeg" alt="Cliente Bespoke">
     </div>
 
-    <!-- Clientes -->
-    <section id="clientes" class="container my-5">
-        <h2 class="text-center mb-4">Nuestros Clientes</h2>
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <img src="familia.jpeg" class="img-fluid rounded shadow" alt="Familia Bespoke">
-            </div>
-            <div class="col-md-4 mb-4">
-                <img src="pareja.jpeg" class="img-fluid rounded shadow" alt="Pareja Bespoke">
-            </div>
-            <div class="col-md-4 mb-4">
-                <img src="banner-image.jpeg" class="img-fluid rounded shadow" alt="Bespoke Cliente">
-            </div>
-        </div>
-    </section>
-
     <!-- Productos -->
-   <section id="productos" class="container my-5">
-    <h2 class="text-center mb-4">Nuestros Productos</h2>
-    <div class="row">
-        <!-- Producto 1 -->
-        <div class="col-md-4 mb-4">
-            <div class="card product-card">
-                <img src="caja-8-chocolates.jpeg" class="card-img-top" alt="Caja Salvador de Bahía">
-                <div class="card-body">
-                    <h5 class="card-title">Caja Salvador de Bahía</h5>
-                    <p class="card-text">Exquisita selección de chocolates finos personalizables. Contiene 8 chocolates.</p>
-                    <p class="card-text">$22.00 USD</p>
-                    <button class="btn btn-primary" onclick="openModal(1)">Seleccionar</button>
+    <section id="productos" class="container my-5">
+        <h2 class="text-center mb-4">Nuestros Productos</h2>
+        <div class="row">
+            <!-- Producto 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="caja-8-chocolates.jpeg" class="card-img-top" alt="Caja Salvador de Bahía">
+                    <div class="card-body">
+                        <h5 class="card-title">Caja Salvador de Bahía</h5>
+                        <p class="card-text">Exquisita selección de chocolates finos personalizables. Contiene 8 chocolates.</p>
+                        <p class="card-text">$22.00 USD</p>
+                        <button class="btn btn-primary" onclick="openModal(1)">Seleccionar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="caja-8-chocolates-2.jpeg" class="card-img-top" alt="Caja Brisa do Brasil">
+                    <div class="card-body">
+                        <h5 class="card-title">Caja Brisa do Brasil</h5>
+                        <p class="card-text">Una variedad deliciosa de chocolates seleccionados y personalizables. Contiene 8 chocolates.</p>
+                        <p class="card-text">$22.00 USD</p>
+                        <button class="btn btn-primary" onclick="openModal(2)">Seleccionar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="tableta-grande.jpeg" class="card-img-top" alt="Tableta Salvador">
+                    <div class="card-body">
+                        <h5 class="card-title">Tableta Salvador</h5>
+                        <p class="card-text">Chocolate premium en presentación grande personalizable.</p>
+                        <p class="card-text">$3.00 USD</p>
+                        <button class="btn btn-primary" onclick="openModal(3)">Seleccionar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 4 -->
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="caja-blanca.jpeg" class="card-img-top" alt="Caja Blanca Arena">
+                    <div class="card-body">
+                        <h5 class="card-title">Caja Blanca Arena</h5>
+                        <p class="card-text">Ideal para regalos especiales. Contiene 8 chocolates.</p>
+                        <p class="card-text">$22.00 USD</p>
+                        <button class="btn btn-primary" onclick="openModal(4)">Seleccionar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="tableta-2.jpeg" class="card-img-top" alt="Tableta Blanca Arena">
+                    <div class="card-body">
+                        <h5 class="card-title">Tableta Blanca Arena</h5>
+                        <p class="card-text">Chocolate con mensaje especial para ocasiones únicas.</p>
+                        <p class="card-text">$3.00 USD</p>
+                        <button class="btn btn-primary" onclick="openModal(5)">Seleccionar</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Producto 6 -->
+            <div class="col-md-4 mb-4">
+                <div class="card product-card">
+                    <img src="tableta-3.jpeg" class="card-img-top" alt="Tableta Oaxaca">
+                    <div class="card-body">
+                        <h5 class="card-title">Tableta Oaxaca</h5>
+                        <p class="card-text">Chocolate diseñado para momentos especiales.</p>
+                        <p class="card-text">$3.00 USD</p>
+                        <button class="btn btn-primary" onclick="openModal(6)">Seleccionar</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Producto 2 -->
-        <div class="col-md-4 mb-4">
-            <div class="card product-card">
-                <img src="caja-8-chocolates-2.jpeg" class="card-img-top" alt="Caja Brisa do Brasil">
-                <div class="card-body">
-                    <h5 class="card-title">Caja Brisa do Brasil</h5>
-                    <p class="card-text">Una variedad deliciosa de chocolates seleccionados y personalizables. Contiene 8 chocolates.</p>
-                    <p class="card-text">$22.00 USD</p>
-                    <button class="btn btn-primary" onclick="openModal(2)">Seleccionar</button>
+    </section>
+
+    <!-- Modal para personalización -->
+    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Personalizar Producto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-            </div>
-        </div>
-        <!-- Producto 3 -->
-        <div class="col-md-4 mb-4">
-            <div class="card product-card">
-                <img src="tableta-grande.jpeg" class="card-img-top" alt="Tableta Salvador">
-                <div class="card-body">
-                    <h5 class="card-title">Tableta Salvador</h5>
-                    <p class="card-text">Chocolate premium en presentación grande personalizable.</p>
-                    <p class="card-text">$3.00 USD</p>
-                    <button class="btn btn-primary" onclick="openModal(3)">Seleccionar</button>
+                <div class="modal-body">
+                    <h6 id="modalProductName"></h6>
+                    <p id="modalProductPrice"></p>
+                    <input type="hidden" id="modalProductId">
+                    <label for="modalQuantity">Cantidad:</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(-1)">-</button>
+                        </div>
+                        <input type="text" class="form-control text-center" id="modalQuantity" value="1" readonly>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(1)">+</button>
+                        </div>
+                    </div>
+                    <label for="modalCustomMessage">Mensaje Personalizado:</label>
+                    <textarea class="form-control" id="modalCustomMessage" maxlength="50" placeholder="Escribe tu mensaje aquí (máximo 50 caracteres)"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="addToCart()">Añadir al Carrito</button>
                 </div>
             </div>
         </div>
     </div>
-</section>
-
-<!-- Modal para personalización de productos -->
-<div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="productModalLabel">Personalizar Producto</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <h6 id="modalProductName"></h6>
-                <p id="modalProductPrice"></p>
-                <input type="hidden" id="modalProductId">
-
-                <!-- Cantidad -->
-                <label for="modalQuantity">Cantidad:</label>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(-1)">-</button>
-                    </div>
-                    <input type="text" class="form-control text-center" id="modalQuantity" value="1" readonly>
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(1)">+</button>
-                    </div>
-                </div>
-
-                <!-- Mensaje personalizado -->
-                <label for="modalCustomMessage">Mensaje Personalizado:</label>
-                <textarea class="form-control" id="modalCustomMessage" maxlength="50" placeholder="Escribe tu mensaje aquí (máximo 50 caracteres)"></textarea>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="addToCart()">Añadir al Carrito</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-    <!-- Nuestra Historia -->
-    <section id="nosotros" class="bg-light py-5">
-        <div class="container">
-            <h2 class="text-center">Nuestra Historia</h2>
-            <p class="text-center">Desde nuestros inicios, Bespoke Chocolates ha creado momentos especiales a través de sabores únicos y personalizables. Nos enorgullecemos de crear chocolates artesanales con la mejor calidad.</p>
-        </div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="container my-5">
-        <h2 class="text-center">Contáctanos</h2>
-        <p class="text-center">Para pedidos personalizados, contáctanos a través de Instagram o WhatsApp.</p>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2023 Bespoke Chocolates. Todos los derechos reservados.</p>
-        <a href="https://www.instagram.com/bespoke.chocolate/" target="_blank"><i class="fab fa-instagram mx-2"></i></a>
-        <a href="https://wa.me/5530098469" target="_blank"><i class="fab fa-whatsapp mx-2"></i></a>
-    </footer>
 
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        const translations = {
-            es: {
-                navbar: {
-                    products: "Productos",
-                    clients: "Clientes",
-                    history: "Nuestra Historia",
-                    contact: "Contacto"
-                },
-                banner: "#DiloConBespoke",
-                clientsSection: "Nuestros Clientes",
-                productsSection: "Nuestros Productos",
-                ourHistory: "Nuestra Historia",
-                contactUs: "Contáctanos",
-                contactDescription: "Para pedidos personalizados, contáctanos a través de Instagram o WhatsApp."
-            },
-            en: {
-                navbar: {
-                    products: "Products",
-                    clients: "Clients",
-                    history: "Our Story",
-                    contact: "Contact"
-                },
-                banner: "#SayItWithBespoke",
-                clientsSection: "Our Clients",
-                productsSection: "Our Products",
-                ourHistory: "Our Story",
-                contactUs: "Contact Us",
-                contactDescription: "For custom orders, contact us via Instagram or WhatsApp."
-            },
-            pt: {
-                navbar: {
-                    products: "Produtos",
-                    clients: "Clientes",
-                    history: "Nossa História",
-                    contact: "Contato"
-                },
-                banner: "#DigaComBespoke",
-                clientsSection: "Nossos Clientes",
-                productsSection: "Nossos Produtos",
-                ourHistory: "Nossa História",
-                contactUs: "Contate-Nos",
-                contactDescription: "Para pedidos personalizados, entre em contato pelo Instagram ou WhatsApp."
-            }
-        };
+        const products = [
+            { id: 1, name: "Caja Salvador de Bahía", price: 22.00 },
+            { id: 2, name: "Caja Brisa do Brasil", price: 22.00 },
+            { id: 3, name: "Tableta Salvador", price: 3.00 },
+            { id: 4, name: "Caja Blanca Arena", price: 22.00 },
+            { id: 5, name: "Tableta Blanca Arena", price: 3.00 },
+            { id: 6, name: "Tableta Oaxaca", price: 3.00 }
+        ];
 
-        function changeLanguage(lang) {
-            // Navbar
-            document.querySelector('a.nav-link[href="#productos"]').innerText = translations[lang].navbar.products;
-            document.querySelector('a.nav-link[href="#clientes"]').innerText = translations[lang].navbar.clients;
-            document.querySelector('a.nav-link[href="#nosotros"]').innerText = translations[lang].navbar.history;
-            document.querySelector('a.nav-link[href="#contacto"]').innerText = translations[lang].navbar.contact;
+        let cart = [];
 
-            // Banner
-            document.querySelector(".banner h1").innerText = translations[lang].banner;
-
-            // Secciones
-            document.querySelector("#clientes h2").innerText = translations[lang].clientsSection;
-            document.querySelector("#productos h2").innerText = translations[lang].productsSection;
-            document.querySelector("#nosotros h2").innerText = translations[lang].ourHistory;
-            document.querySelector("#contacto h2").innerText = translations[lang].contactUs;
-
-            // Descripciones
-            document.querySelector("#contacto p").innerText = translations[lang].contactDescription;
+        function openModal(productId) {
+            const product = products.find(p => p.id === productId);
+            document.getElementById("modalProductName").innerText = product.name;
+            document.getElementById("modalProductPrice").innerText = `$${product.price.toFixed(2)} USD`;
+            document.getElementById("modalProductId").value = productId;
+            document.getElementById("modalQuantity").value = 1;
+            document.getElementById("modalCustomMessage").value = "";
+            $('#productModal').modal('show');
         }
-<script>
-    // Lista de productos
-    const products = [
-        {
-            id: 1,
-            name: "Caja Salvador de Bahía",
-            description: "Exquisita selección de chocolates finos personalizables. Contiene 8 chocolates.",
-            price: 22.00
-        },
-        {
-            id: 2,
-            name: "Caja Brisa do Brasil",
-            description: "Una variedad deliciosa de chocolates seleccionados y personalizables. Contiene 8 chocolates.",
-            price: 22.00
-        },
-        {
-            id: 3,
-            name: "Tableta Salvador",
-            description: "Chocolate premium en presentación grande personalizable.",
-            price: 3.00
+
+        function updateQuantity(change) {
+            const quantityInput = document.getElementById("modalQuantity");
+            let quantity = parseInt(quantityInput.value);
+            quantity = Math.max(1, quantity + change);
+            quantityInput.value = quantity;
         }
-    ];
 
-    const cart = [];
+        function addToCart() {
+            const productId = parseInt(document.getElementById("modalProductId").value);
+            const quantity = parseInt(document.getElementById("modalQuantity").value);
+            const customMessage = document.getElementById("modalCustomMessage").value;
+            const product = products.find(p => p.id === productId);
 
-    // Mostrar el modal para personalizar productos
-    function openModal(productId) {
-        const product = products.find(p => p.id === productId);
-        document.getElementById("modalProductName").innerText = product.name;
-        document.getElementById("modalProductPrice").innerText = `$${product.price.toFixed(2)} USD`;
-        document.getElementById("modalProductId").value = product.id;
-        document.getElementById("modalQuantity").value = 1; // Resetear cantidad
-        document.getElementById("modalCustomMessage").value = ""; // Resetear mensaje
-        $('#productModal').modal('show');
-    }
-
-    // Agregar producto al carrito
-    function addToCart() {
-        const productId = parseInt(document.getElementById("modalProductId").value);
-        const quantity = parseInt(document.getElementById("modalQuantity").value);
-        const customMessage = document.getElementById("modalCustomMessage").value;
-
-        const product = products.find(p => p.id === productId);
-        const cartItem = {
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            quantity: quantity,
-            customMessage: customMessage
-        };
-
-        cart.push(cartItem);
-        alert(`Producto añadido al carrito: ${product.name} (Cantidad: ${quantity}, Mensaje: ${customMessage || "Sin mensaje"})`);
-        $('#productModal').modal('hide');
-    }
-
-    // Actualizar cantidad en el modal
-    function updateQuantity(change) {
-        const quantityInput = document.getElementById("modalQuantity");
-        let currentQuantity = parseInt(quantityInput.value);
-        currentQuantity += change;
-        if (currentQuantity < 1) currentQuantity = 1;
-        quantityInput.value = currentQuantity;
-    }
-</script>
+            cart.push({ ...product, quantity, customMessage });
+            alert(`Añadido al carrito: ${product.name} (${quantity})`);
+            $('#productModal').modal('hide');
+        }
+    </script>
 </body>
 </html>
