@@ -44,6 +44,7 @@
     </style>
 </head>
 <body>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Bespoke Chocolates</a>
@@ -94,10 +95,12 @@
     </section>
 
     <!-- Productos -->
-    <section id="productos" class="container my-5">
-        <h2 class="text-center mb-4">Nuestros Productos</h2>
-        <!-- Aquí se listan los productos -->
-    </section>
+   <section id="productos" class="container my-5">
+    <h2 class="text-center mb-4">Nuestros Productos</h2>
+    <div class="row" id="product-list">
+        <!-- Aquí se generarán los productos -->
+    </div>
+</section>
 
     <!-- Nuestra Historia -->
     <section id="nosotros" class="bg-light py-5">
@@ -189,6 +192,98 @@
             // Descripciones
             document.querySelector("#contacto p").innerText = translations[lang].contactDescription;
         }
+<script>
+    // Lista de productos
+    const products = [
+        {
+            id: 1,
+            name: "Caja Salvador de Bahía",
+            description: "Exquisita selección de chocolates finos personalizables. Contiene 8 chocolates.",
+            price: 22.00,
+            image: "caja-8-chocolates.jpeg"
+        },
+        {
+            id: 2,
+            name: "Caja Brisa do Brasil",
+            description: "Una variedad deliciosa de chocolates seleccionados y personalizables. Contiene 8 chocolates.",
+            price: 22.00,
+            image: "caja-8-chocolates-2.jpeg"
+        },
+        {
+            id: 3,
+            name: "Tableta Salvador",
+            description: "Chocolate premium en presentación grande personalizable.",
+            price: 3.00,
+            image: "tableta-grande.jpeg"
+        }
+        // Agrega más productos aquí...
+    ];
+
+    const cart = [];
+
+    // Generar los productos en la página
+    function generateProducts() {
+        const productList = document.getElementById("product-list");
+        products.forEach(product => {
+            const productCard = `
+                <div class="col-md-4 mb-4">
+                    <div class="card product-card">
+                        <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${product.name}</h5>
+                            <p class="card-text">${product.description}</p>
+                            <p class="card-text">$${product.price.toFixed(2)} USD</p>
+                            <button class="btn btn-primary" onclick="openModal(${product.id})">Seleccionar</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            productList.innerHTML += productCard;
+        });
+    }
+
+    // Mostrar el modal para personalización
+    function openModal(productId) {
+        const product = products.find(p => p.id === productId);
+        document.getElementById("modalProductName").innerText = product.name;
+        document.getElementById("modalProductPrice").innerText = `$${product.price.toFixed(2)} USD`;
+        document.getElementById("modalProductId").value = product.id;
+        document.getElementById("modalQuantity").value = 1; // Resetear cantidad
+        document.getElementById("modalCustomMessage").value = ""; // Resetear mensaje
+        $('#productModal').modal('show');
+    }
+
+    // Agregar al carrito
+    function addToCart() {
+        const productId = parseInt(document.getElementById("modalProductId").value);
+        const quantity = parseInt(document.getElementById("modalQuantity").value);
+        const customMessage = document.getElementById("modalCustomMessage").value;
+
+        const product = products.find(p => p.id === productId);
+        const cartItem = {
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            quantity: quantity,
+            customMessage: customMessage
+        };
+
+        cart.push(cartItem);
+        alert(`Producto añadido al carrito: ${product.name} (${quantity})`);
+        $('#productModal').modal('hide');
+    }
+
+    // Actualizar la cantidad
+    function updateQuantity(change) {
+        const quantityInput = document.getElementById("modalQuantity");
+        let currentQuantity = parseInt(quantityInput.value);
+        currentQuantity += change;
+        if (currentQuantity < 1) currentQuantity = 1;
+        quantityInput.value = currentQuantity;
+    }
+
+    // Generar productos al cargar la página
+    document.addEventListener("DOMContentLoaded", generateProducts);
     </script>
 </body>
 </html>
