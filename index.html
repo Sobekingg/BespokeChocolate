@@ -45,6 +45,17 @@
 </head>
 <body>
     <!-- Navbar -->
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Idioma
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageDropdown">
+        <a class="dropdown-item" href="#" onclick="changeLanguage('es')">Español</a>
+        <a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a>
+        <a class="dropdown-item" href="#" onclick="changeLanguage('pt')">Português</a>
+    </div>
+</li>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Bespoke Chocolates</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,7 +68,7 @@
                 <li class="nav-item"><a class="nav-link" href="#nosotros">Nuestra Historia</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                 <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/bespoke.chocolate/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                <li class="nav-item"><a class="nav-link" href="https://wa.me/5530098469" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="https://wa.me/5534591115" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
             </ul>
         </div>
     </nav>
@@ -245,6 +256,71 @@
     </footer>
 
     <!-- JavaScript -->
+<script>
+    const translations = {
+        es: {
+            navbar: {
+                products: "Productos",
+                clients: "Clientes",
+                history: "Nuestra Historia",
+                contact: "Contacto"
+            },
+            banner: "#DiloConBespoke",
+            clientsSection: "Nuestros Clientes",
+            productsSection: "Nuestros Productos",
+            ourHistory: "Nuestra Historia",
+            contactUs: "Contáctanos",
+            contactDescription: "Para pedidos personalizados, contáctanos a través de Instagram o WhatsApp."
+        },
+        en: {
+            navbar: {
+                products: "Products",
+                clients: "Clients",
+                history: "Our Story",
+                contact: "Contact"
+            },
+            banner: "#SayItWithBespoke",
+            clientsSection: "Our Clients",
+            productsSection: "Our Products",
+            ourHistory: "Our Story",
+            contactUs: "Contact Us",
+            contactDescription: "For custom orders, contact us via Instagram or WhatsApp."
+        },
+        pt: {
+            navbar: {
+                products: "Produtos",
+                clients: "Clientes",
+                history: "Nossa História",
+                contact: "Contato"
+            },
+            banner: "#DigaComBespoke",
+            clientsSection: "Nossos Clientes",
+            productsSection: "Nossos Produtos",
+            ourHistory: "Nossa História",
+            contactUs: "Contate-Nos",
+            contactDescription: "Para pedidos personalizados, entre em contato pelo Instagram ou WhatsApp."
+        }
+    };
+
+    function changeLanguage(lang) {
+        // Cambiar texto de la navbar
+        document.querySelector('a.nav-link[href="#productos"]').innerText = translations[lang].navbar.products;
+        document.querySelector('a.nav-link[href="#clientes"]').innerText = translations[lang].navbar.clients;
+        document.querySelector('a.nav-link[href="#nosotros"]').innerText = translations[lang].navbar.history;
+        document.querySelector('a.nav-link[href="#contacto"]').innerText = translations[lang].navbar.contact;
+
+        // Cambiar el texto del banner
+        document.querySelector(".banner h1").innerText = translations[lang].banner;
+
+        // Cambiar títulos de las secciones
+        document.querySelector("#clientes h2").innerText = translations[lang].clientsSection;
+        document.querySelector("#productos h2").innerText = translations[lang].productsSection;
+        document.querySelector("#nosotros h2").innerText = translations[lang].ourHistory;
+        document.querySelector("#contacto h2").innerText = translations[lang].contactUs;
+
+        // Cambiar textos de descripción
+        document.querySelector("#contacto p").innerText = translations[lang].contactDescription;
+    }
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
