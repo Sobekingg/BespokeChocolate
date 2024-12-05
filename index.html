@@ -45,17 +45,6 @@
 </head>
 <body>
     <!-- Navbar -->
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Idioma
-    </a>
-    <div class="dropdown-menu" aria-labelledby="languageDropdown">
-        <a class="dropdown-item" href="#" onclick="changeLanguage('es')">Español</a>
-        <a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a>
-        <a class="dropdown-item" href="#" onclick="changeLanguage('pt')">Português</a>
-    </div>
-</li>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Bespoke Chocolates</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,8 +56,17 @@
                 <li class="nav-item"><a class="nav-link" href="#clientes">Clientes</a></li>
                 <li class="nav-item"><a class="nav-link" href="#nosotros">Nuestra Historia</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
-                <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/bespoke.chocolate/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                <li class="nav-item"><a class="nav-link" href="https://wa.me/5534591115" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                <!-- Menú desplegable de idiomas -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Idioma
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <a class="dropdown-item" href="#" onclick="changeLanguage('es')">Español</a>
+                        <a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a>
+                        <a class="dropdown-item" href="#" onclick="changeLanguage('pt')">Português</a>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
@@ -98,141 +96,8 @@
     <!-- Productos -->
     <section id="productos" class="container my-5">
         <h2 class="text-center mb-4">Nuestros Productos</h2>
-        <div class="row">
-            <!-- Producto 1 -->
-            <div class="col-md-4 mb-4">
-                <div class="card product-card">
-                    <img src="caja-8-chocolates.jpeg" class="card-img-top" alt="Caja 8 Chocolates">
-                    <div class="card-body">
-                        <h5 class="card-title">Caja Salvador de Bahía</h5>
-                        <p class="card-text">Exquisita selección de chocolates finos personalizables. Contiene 8 Chocolates.</p>
-                        <p class="card-text">$22.00 dls</p>
-                        <button class="btn btn-primary" onclick="openModal('Caja Salvador de Bahía')">Seleccionar</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Producto 2 -->
-            <div class="col-md-4 mb-4">
-                <div class="card product-card">
-                    <img src="caja 8 chocolates 2.jpeg" class="card-img-top" alt="Caja de 8 Chocolates 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Caja Brisa do Brasil</h5>
-                        <p class="card-text">Una variedad deliciosa de chocolates seleccionados y personalizables. Contiene 8 chocolates.</p>
-                        <p class="card-text">$22.00 dls</p>
-                        <button class="btn btn-primary" onclick="openModal('Caja Brisa do Brasil')">Seleccionar</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Producto 3 -->
-            <div class="col-md-4 mb-4">
-                <div class="card product-card">
-                    <img src="tableta-grande.jpeg" class="card-img-top" alt="Tableta Grande">
-                    <div class="card-body">
-                        <h5 class="card-title">Tableta Salvador</h5>
-                        <p class="card-text">Chocolate premium en presentación grande personalizable.</p>
-                        <p class="card-text">$3.00 dls</p>
-                        <button class="btn btn-primary" onclick="openModal('Tableta Salvador')">Seleccionar</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Producto 4 -->
-            <div class="col-md-4 mb-4">
-                <div class="card product-card">
-                    <img src="caja blanca.jpeg" class="card-img-top" alt="Caja Blanca">
-                    <div class="card-body">
-                        <h5 class="card-title">Caja Blanca Arena</h5>
-                        <p class="card-text">Ideal para regalos especiales. Contiene 8 chocolates.</p>
-                        <p class="card-text">$22.00 dls</p>
-                        <button class="btn btn-primary" onclick="openModal('Caja Blanca Arena')">Seleccionar</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Producto 5 -->
-            <div class="col-md-4 mb-4">
-                <div class="card product-card">
-                    <img src="tableta 2.jpeg" class="card-img-top" alt="Tableta 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Tableta Blanca Arena</h5>
-                        <p class="card-text">Chocolate con mensaje especial para ocasiones únicas.</p>
-                        <p class="card-text">$3.00 dls</p>
-                        <button class="btn btn-primary" onclick="openModal('Tableta Blanca Arena')">Seleccionar</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Producto 6 -->
-            <div class="col-md-4 mb-4">
-                <div class="card product-card">
-                    <img src="tableta 3.jpeg" class="card-img-top" alt="Tableta 3">
-                    <div class="card-body">
-                        <h5 class="card-title">Tableta Rio Do Janeiro</h5>
-                        <p class="card-text">Sabor y diseño único para ti.</p>
-                        <p class="card-text">$3.00 dls</p>
-                        <button class="btn btn-primary" onclick="openModal('Tableta Rio Do Janeiro')">Seleccionar</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Producto 7 -->
-            <div class="col-md-4 mb-4">
-                <div class="card product-card">
-                    <img src="tableta 4.jpeg" class="card-img-top" alt="Tableta 4">
-                    <div class="card-body">
-                        <h5 class="card-title">Tableta Oaxaca</h5>
-                        <p class="card-text">Chocolate diseñado para momentos especiales.</p>
-                        <p class="card-text">$3.00 dls</p>
-                        <button class="btn btn-primary" onclick="openModal('Tableta Oaxaca')">Seleccionar</button>
-                    </div>
-                </div>
-            </div>
-            <!-- Producto 8 -->
-            <div class="col-md-4 mb-4">
-                <div class="card product-card">
-                    <img src="tableta 5.jpeg" class="card-img-top" alt="Tableta 5">
-                    <div class="card-body">
-                        <h5 class="card-title">Tableta México</h5>
-                        <p class="card-text">Perfecto para regalar y compartir.</p>
-                        <p class="card-text">$3.00 dls</p>
-                        <button class="btn btn-primary" onclick="openModal('Tableta México')">Seleccionar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Aquí se listan los productos -->
     </section>
-
-    <!-- Modal para selección de cantidad y mensaje -->
-    <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="productModalLabel">Personalizar Producto</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h6 id="productName"></h6>
-                    <label for="quantity">Cantidad:</label>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(-1)">-</button>
-                        </div>
-                        <input type="text" class="form-control text-center" id="quantity" value="1" readonly>
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button" onclick="updateQuantity(1)">+</button>
-                        </div>
-                    </div>
-                    <label for="messageType">Mensaje:</label>
-                    <select class="form-control" id="messageType" onchange="toggleCustomMessage()">
-                        <option value="generic">Mensaje Genérico</option>
-                        <option value="custom">Mensaje Personalizado</option>
-                    </select>
-                    <textarea class="form-control mt-2" id="customMessage" maxlength="20" placeholder="Escribe tu mensaje aquí (máximo 20 palabras)" style="display: none;"></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Añadir al Carrito</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Nuestra Historia -->
     <section id="nosotros" class="bg-light py-5">
@@ -256,91 +121,73 @@
     </footer>
 
     <!-- JavaScript -->
-<script>
-    const translations = {
-        es: {
-            navbar: {
-                products: "Productos",
-                clients: "Clientes",
-                history: "Nuestra Historia",
-                contact: "Contacto"
-            },
-            banner: "#DiloConBespoke",
-            clientsSection: "Nuestros Clientes",
-            productsSection: "Nuestros Productos",
-            ourHistory: "Nuestra Historia",
-            contactUs: "Contáctanos",
-            contactDescription: "Para pedidos personalizados, contáctanos a través de Instagram o WhatsApp."
-        },
-        en: {
-            navbar: {
-                products: "Products",
-                clients: "Clients",
-                history: "Our Story",
-                contact: "Contact"
-            },
-            banner: "#SayItWithBespoke",
-            clientsSection: "Our Clients",
-            productsSection: "Our Products",
-            ourHistory: "Our Story",
-            contactUs: "Contact Us",
-            contactDescription: "For custom orders, contact us via Instagram or WhatsApp."
-        },
-        pt: {
-            navbar: {
-                products: "Produtos",
-                clients: "Clientes",
-                history: "Nossa História",
-                contact: "Contato"
-            },
-            banner: "#DigaComBespoke",
-            clientsSection: "Nossos Clientes",
-            productsSection: "Nossos Produtos",
-            ourHistory: "Nossa História",
-            contactUs: "Contate-Nos",
-            contactDescription: "Para pedidos personalizados, entre em contato pelo Instagram ou WhatsApp."
-        }
-    };
-
-    function changeLanguage(lang) {
-        // Cambiar texto de la navbar
-        document.querySelector('a.nav-link[href="#productos"]').innerText = translations[lang].navbar.products;
-        document.querySelector('a.nav-link[href="#clientes"]').innerText = translations[lang].navbar.clients;
-        document.querySelector('a.nav-link[href="#nosotros"]').innerText = translations[lang].navbar.history;
-        document.querySelector('a.nav-link[href="#contacto"]').innerText = translations[lang].navbar.contact;
-
-        // Cambiar el texto del banner
-        document.querySelector(".banner h1").innerText = translations[lang].banner;
-
-        // Cambiar títulos de las secciones
-        document.querySelector("#clientes h2").innerText = translations[lang].clientsSection;
-        document.querySelector("#productos h2").innerText = translations[lang].productsSection;
-        document.querySelector("#nosotros h2").innerText = translations[lang].ourHistory;
-        document.querySelector("#contacto h2").innerText = translations[lang].contactUs;
-
-        // Cambiar textos de descripción
-        document.querySelector("#contacto p").innerText = translations[lang].contactDescription;
-    }
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        function openModal(productName) {
-            $('#productName').text(productName);
-            $('#productModal').modal('show');
-        }
-        function updateQuantity(change) {
-            var currentQuantity = parseInt($('#quantity').val());
-            currentQuantity += change;
-            if (currentQuantity < 1) currentQuantity = 1;
-            $('#quantity').val(currentQuantity);
-        }
-        function toggleCustomMessage() {
-            if ($('#messageType').val() === 'custom') {
-                $('#customMessage').show();
-            } else {
-                $('#customMessage').hide();
+        const translations = {
+            es: {
+                navbar: {
+                    products: "Productos",
+                    clients: "Clientes",
+                    history: "Nuestra Historia",
+                    contact: "Contacto"
+                },
+                banner: "#DiloConBespoke",
+                clientsSection: "Nuestros Clientes",
+                productsSection: "Nuestros Productos",
+                ourHistory: "Nuestra Historia",
+                contactUs: "Contáctanos",
+                contactDescription: "Para pedidos personalizados, contáctanos a través de Instagram o WhatsApp."
+            },
+            en: {
+                navbar: {
+                    products: "Products",
+                    clients: "Clients",
+                    history: "Our Story",
+                    contact: "Contact"
+                },
+                banner: "#SayItWithBespoke",
+                clientsSection: "Our Clients",
+                productsSection: "Our Products",
+                ourHistory: "Our Story",
+                contactUs: "Contact Us",
+                contactDescription: "For custom orders, contact us via Instagram or WhatsApp."
+            },
+            pt: {
+                navbar: {
+                    products: "Produtos",
+                    clients: "Clientes",
+                    history: "Nossa História",
+                    contact: "Contato"
+                },
+                banner: "#DigaComBespoke",
+                clientsSection: "Nossos Clientes",
+                productsSection: "Nossos Produtos",
+                ourHistory: "Nossa História",
+                contactUs: "Contate-Nos",
+                contactDescription: "Para pedidos personalizados, entre em contato pelo Instagram ou WhatsApp."
             }
+        };
+
+        function changeLanguage(lang) {
+            // Navbar
+            document.querySelector('a.nav-link[href="#productos"]').innerText = translations[lang].navbar.products;
+            document.querySelector('a.nav-link[href="#clientes"]').innerText = translations[lang].navbar.clients;
+            document.querySelector('a.nav-link[href="#nosotros"]').innerText = translations[lang].navbar.history;
+            document.querySelector('a.nav-link[href="#contacto"]').innerText = translations[lang].navbar.contact;
+
+            // Banner
+            document.querySelector(".banner h1").innerText = translations[lang].banner;
+
+            // Secciones
+            document.querySelector("#clientes h2").innerText = translations[lang].clientsSection;
+            document.querySelector("#productos h2").innerText = translations[lang].productsSection;
+            document.querySelector("#nosotros h2").innerText = translations[lang].ourHistory;
+            document.querySelector("#contacto h2").innerText = translations[lang].contactUs;
+
+            // Descripciones
+            document.querySelector("#contacto p").innerText = translations[lang].contactDescription;
         }
     </script>
 </body>
